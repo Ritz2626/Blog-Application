@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-responsive.min.css' %}" rel="stylesheet">
+
+  </head>
+  <body>
+   
+   <h1 class="page-header" style="text-align:center;">Blog Posts</h1>
+   <br>
+      {% for a in store%}
+        <div class="span4" style="border:0.5px solid black;text-align:center;border-radius:12px;background-color: #D2EFF6;
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );">
+          <br>
+            <h2 style="color:white;background-color:green;">{{a.title}}</h2>
+            <br>
+            <h4>Author:-{{a.author}}</h4>
+            <br>
+            <a href="{% url 'detail' a.id %}"><button>View Details</button></a>
+            <br>
+            <br>
+        </div>
+       {% endfor %}
+       
+    
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+
+  </body>
+</html>
