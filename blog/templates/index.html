@@ -13,25 +13,61 @@
 
   </head>
   <body>
+    <style>
+    
+      .button-34 {
+        background: #5E5DF0;
+        border-radius: 999px;
+        box-shadow: #5E5DF0 0 10px 20px -10px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        opacity: 1;
+        outline: 0 solid transparent;
+        padding: 8px 18px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: fit-content;
+        word-break: break-word;
+        border: 0;
+      }
+      .img1 {
+        display: block;
+        width: 300px;
+        height: 225px;
+        margin-right:auto;
+        margin-left:auto;
+      }
+    </style>
    
    <h1 class="page-header" style="text-align:center;">Blog Posts</h1>
    <br>
       {% for a in store%}
-        <div class="span4" style="border:0.5px solid black;text-align:center;border-radius:12px;background-color: #D2EFF6;
+        <div class="span4" style="border:0.5px solid black;text-align:center;border-radius:12px;background-color: #fffff;
         box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
         backdrop-filter: blur( 4px );
         -webkit-backdrop-filter: blur( 4px );
         border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );">
+        border: 1px solid rgba( 255, 255, 255, 0.18 ); margin-bottom:15px">
           <br>
-            <h2 style="color:white;background-color:green;">{{a.title}}</h2>
+            <h2 style="color:white;background-color:rgb(255, 140, 30);">{{a.title}}</h2>
             <br>
-            <h4>Author:-{{a.author}}</h4>
+            <img class="img1" src="media/{{a.cover_photo}}">
             <br>
-            <a href="{% url 'detail' a.id %}"><button>View Details</button></a>
+            <h3>Author username-{{a.author}}</h3>
+            <h3>Published on-{{a.date1}}</h3>
+            <br>
+           <a href="{% url 'detail' a.id %}"><button class="button-34">Read More</button></a>
+            <br>
             <br>
             <br>
         </div>
+        
        {% endfor %}
        
     

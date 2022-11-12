@@ -13,11 +13,47 @@
 
   </head>
   <body>
+    <style>
+      .heading1 {
+    font-family: "Crimson Text",serif;
+    margin: 30px auto;
+    line-height: 1.1em;
+    font-size:50px;
+      }
+      .content
+      {
+        margin-left:20px;
+        margin-right:20px;
+        
+      }
+      .author{
+        border:2px solid black;
+        border-radius:22px;
+        width:40%;
+        margin-left:2vw;
+        
+      }
+      .author p,h3{
+        margin-left:10px;
+        
+      }
+    </style>
    {% for a in obj %}
-   <h2 style="text-align:center;">{{a.title}}</h2>
-   <p>{{a.description}}</p>
+   <h2 class="heading1" style="text-align:center;">{{a.title}}</h2>
+   
+   <br>
+   <div class="author">
+  <br>
+ 
+  <h3 class=>About the Author <img src="{% static 'img/writer.png' %}" height="32" width="32" ></h3>
+  <br>
    <p>{{a.author.get_full_name}}</p>
    <p>{{a.author.email}}</p>
+   </div>
+   <div class="content">
+    <p>{{a.description|safe}}</p>
+   </div>
+   
 
     {% endfor %}
     
