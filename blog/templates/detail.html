@@ -29,27 +29,32 @@
       .author{
         border:2px solid black;
         border-radius:22px;
-        width:40%;
+        width:30%;
         margin-left:2vw;
+        box-shadow:5px 10px;
         
       }
       .author p,h3{
         margin-left:10px;
         
       }
+      .author p{
+        font-size:1.2vw;
+      }
     </style>
    {% for a in obj %}
-   <h2 class="heading1" style="text-align:center;">{{a.title}}</h2>
+   <h2 class="heading1" style="text-align:center;text-decoration:underline;">{{a.title}}</h2>
    
    <br>
    <div class="author">
   <br>
  
-  <h3 class=>About the Author <img src="{% static 'img/writer.png' %}" height="32" width="32" ></h3>
+  <h3 class=>Author <img src="{% static 'img/writer.png' %}" height="26" width="26" ></h3>
   <br>
    <p>{{a.author.get_full_name}}</p>
    <p>{{a.author.email}}</p>
    </div>
+   <br>
    <div class="content">
     <p>{{a.description|safe}}</p>
    </div>
